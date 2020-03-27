@@ -3,8 +3,14 @@ package uvsq.fr.gl_exo4;
 import java.util.Stack;
 /**
 *classe Interpreteur.
+*Implémentez un interpréteur générique Interpreteur
+*qui supporte uniquement les commandes
+*undo et quit. La commande quit stoppe le programme.
+* La commande undo supprime la dernière
+*commande de l’historique.
+*Vous utiliserez le pattern Command pour implémenter
+*les actions.
 * @author Lylia touazi
-*
 */
 public class Interpreteur {
 	  /**
