@@ -20,6 +20,7 @@ public class RetournerLaListeOperande  implements Command {
 	 * methode execute.
 	 * */
 	public void execute() {
+		System.out.println(moteurRPN.getPileOperandes());
 		this.moteurRPN.getPileOperandes();
 	}
 }
