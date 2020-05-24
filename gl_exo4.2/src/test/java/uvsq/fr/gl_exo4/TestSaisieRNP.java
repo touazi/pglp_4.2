@@ -18,19 +18,19 @@ public class TestSaisieRNP {
 	public void testinvoqueMoteurRPN1() {
 		S.invoqueMoteurRPN("3");
 		S.invoqueMoteurRPN("1");
-		assertTrue(S.moteurRPN.getPileOperandes().peek() == 1.0);	
+		assertTrue(S.getMoteurRPN().getPileOperandes().peek() == 1.0);	
 		
 		}
 	public void testinvoqueMoteurRPN2() {
 		S.invoqueMoteurRPN("3");
 		S.invoqueMoteurRPN("1");
 		S.invoqueMoteurRPN("+");
-		assertTrue(S.moteurRPN.getPileOperandes().peek() == 4.0);	
-		assertTrue(S.moteurRPN.getPileOperandes().size() == 1);
+		assertTrue(S.getMoteurRPN().getPileOperandes().peek() == 4.0);	
+		assertTrue(S.getMoteurRPN().getPileOperandes().size() == 1);
 		}
 	@Test(expected = ArithmeticException.class)
 	public void testinvoqueMoteurRPN2EXEPTION() throws ArithmeticException {
-	S.invoqueMoteurRPN("333333333333333333333");
+	S.invoqueMoteurRPN("150");
 		}
 	@Test(expected = ArithmeticException.class)
 	public void testinvoqueMoteurRPN2EX() throws ArithmeticException {
@@ -50,9 +50,9 @@ public class TestSaisieRNP {
 	public void testAjouerNewComOperation() {
 		S.invoqueMoteurRPN("3");
 		S.invoqueMoteurRPN("1");
-		Undo undo =new Undo(S.moteurRPN);
-		S.AjouerNewComOperation("undo", undo);
+		Undo undo =new Undo(S.getMoteurRPN());
+		S.ajouerNewComOperation("undo", undo);
 		undo.execute();
-		assertTrue(S.moteurRPN.getPileOperandes().peek()== 3.0);
+		assertTrue(S.getMoteurRPN().getPileOperandes().peek()== 3.0);
 		}
 }
